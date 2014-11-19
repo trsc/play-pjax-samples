@@ -1,0 +1,9 @@
+@(anythings: List[Anything])
+
+<h3>Anythings</h3>
+
+<ol class="list-unstyled">
+@for(anything <- anythings) {
+  <li>@anything.id - @anything.value</li>
+}
+</ol>

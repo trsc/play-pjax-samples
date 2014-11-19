@@ -1,0 +1,32 @@
+@(title: String)(content: Html)(implicit pjaxVersion: pjax.PjaxVersion)
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-pjax-version" content="@pjaxVersion.value">
+    <title>@title</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("css/bootstrap.min.css"))'>
+    <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
+    <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.pjax.js"))'></script>
+    <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>pjax sample app</h1>
+      </div>
+      <div id="pjax-container" class="content">
+        @content
+      </div>
+      <div class="footer">
+        <p>&copy; toy rocket science 2014</p>
+      </div>
+    </div>
+  </body>
+</html>

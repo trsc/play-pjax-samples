@@ -1,0 +1,15 @@
+# Home page
+GET         /                     controllers.Application.index
+
+GET         /somethings           controllers.Application.listSomethings
+POST        /somethings           controllers.Application.createSomething
+
+GET         /anything_form        controllers.Application.anythingsForm
+POST        /create_anything      controllers.Application.createAnything
+GET         /redirected_here      controllers.Application.redirect
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file         controllers.Assets.at(path="/public", file)
+
+# Webjars
+GET         /webjars/*file        controllers.WebJarAssets.at(file)

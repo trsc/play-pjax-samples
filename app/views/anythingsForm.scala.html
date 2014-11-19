@@ -1,0 +1,14 @@
+@(anyForm: Form[String])
+
+<form action="@routes.Application.createAnything()" method="post" role="form" data-pjax>
+  <div class="form-group">
+    <label for="someInput">Now we'll try what happens when we submit to another URL that redirects to a third URL</label>
+    <input type="text" class="form-control" id="someInput" name="someInput" placeholder="Anything">
+  </div>
+  <span class="help-block">
+  @anyForm("someInput").errors.reverse.map { error =>
+    @Messages(error.message, error.args:_*).
+  }
+  </span>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
